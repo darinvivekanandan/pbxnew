@@ -12,9 +12,9 @@ export class LoginService {
   constructor(private http: Http) { }
   
   login(user) {
-    var params = new HttpParams();
-    console.log('ogij',user);
-    return this.http.get('http://localhost:3000/api/login', {params:user}  ).pipe(
+    var headers = new Headers();
+    headers.append('Content-Type','Application/Json');
+    return this.http.post('http://localhost:3000/login',user,{headers:headers}).pipe(
   map(res => res.json()));
   }
 }

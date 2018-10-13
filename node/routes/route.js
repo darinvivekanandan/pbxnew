@@ -27,6 +27,23 @@ var storage = multer.diskStorage({
 const upload = multer({storage:storage});
 
 
+module.exports = function(router, passport) {  
+
+// login post
+router.post('/login', passport.authenticate('local-login'), function(req, res) {
+    console.log(req.user);
+    res.json(req.user);
+  });
+    // loggedin
+ router.get("/loggedin", function(req, res) {
+        res.send(req.isAuthenticated() ? req.user : '0');
+      });
+
+       // handle logout
+ router.post("/logout", function(req, res) {
+        req.logOut();
+        res.send(200);
+      })
 
 //retrieve user
 router.get('/login',(req,res,next)=>{
@@ -435,21 +452,21 @@ router.post('/outbound',(req,res,next)=>{
 
 // Add User
 router.post('/user',(req,res,next)=>{
+    var newUser = new User();
     var newUser = new User({
-        name: req.body.name,
-        password: req.body.password
+        username: req.body.name.toLowerCase(),
+        password: newUser.generateHash(req.body.password)
     })
     
 
     newUser.save((err,user)=>{
-        if(err) 
-        {
-            res.json({msg:'Failed to add user'});
-        }
-        else{
-            res.json({msg:100});;
-            
-        }
+        req.login(user, function(err) {
+            if (err) {
+              return next(err);
+            }
+            console.log(user);
+            res.json(100);
+          });
     })
 });
 
@@ -744,6 +761,4 @@ function(err,updatedcontact){
 );
 
 })
-
-
-module.exports = router;
+};

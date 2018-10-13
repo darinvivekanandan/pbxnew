@@ -19,8 +19,9 @@ password: any;
     password: this.password
   };
   this.registerservice.addUser(user)
-  .subscribe(extension=>{
-   if(extension.msg === 100) {
+  .subscribe(reg=>{
+    console.log(reg);
+   if(reg === 100) {
      console.log('Added');
      alert('Added Successfully');
     this.router.navigate(['/login']);

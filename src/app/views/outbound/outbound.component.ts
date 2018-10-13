@@ -14,6 +14,8 @@ export class OutboundComponent implements OnInit {
 
   outbounds: Outbound[];
   outbound: Outbound;
+  displayedColumns=['name','dial','dialpattern','callerid','trunk','action'];
+
 
 
   constructor(public dialog: MatDialog,private outboundService: OutboundService) { }

@@ -41,19 +41,20 @@ check()
   }
   */
  const login = {
-   name: this.username,
+   username: this.username,
    password: this.password
 
  }
  console.log(login);
  this.loginservice.login(login).subscribe(user =>{
-   if(user.user === null) {
+   console.log(user);
+   if(!user) {
      console.log('invalid');
    }
    else {
-     console.log(user.user);
-     this.auth.sendToken(user.user.name);
-     this.auth.sendId(user.user._id);
+     console.log(user);
+     this.auth.sendToken(user.username);
+     this.auth.sendId(user._id);
      console.log(this.auth.getId());
      this.myRoute.navigate(['extension']);
    }

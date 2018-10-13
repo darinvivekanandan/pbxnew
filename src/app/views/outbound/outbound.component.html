@@ -1,30 +1,38 @@
 
   <div class="class1">
-      <h1 align="center"><strong>Outbound</strong></h1>
-      <h2 align="center">
-      <button mat-raised-button (click)="openDialog()">Add</button>
-      </h2>
-
-
-      <table>
-        <tr>
-           <th>name</th>
-           <th>dial</th>
-           <th>Dial Pattern</th>
-           <th>callerid</th>
-           <th>trunk</th>
-           <th>Action</th>
-         </tr>
-     <tr *ngFor="let outbound of outbounds">
-         <td>{{outbound.name}}</td>
-         <td>{{outbound.dial}}</td>
-         <td>{{outbound.dialpattern}}</td>
-         <td>{{outbound.callerid}}</td>
-         <td>{{outbound.trunk}}</td>
-         <td><input type="submit" value="Delete"  (click)="deleteOutbound(outbound._id)"></td>
-       </tr>
-     </table>
-
-
-
+    <div class="class2">
+      <mat-card>
+      <mat-card-title>
+      <button mat-raised-button color="primary" (click)="openDialog()">Add Outbound</button>
+    </mat-card-title>
+     <mat-table [dataSource]="outbounds" class="mat-elevation-z8">
+     <ng-container matColumnDef="name">
+   <mat-header-cell  *matHeaderCellDef>Name</mat-header-cell>
+   <mat-cell *matCellDef="let user">{{user.name}}</mat-cell>
+   </ng-container>  
+   <ng-container matColumnDef="dial">
+   <mat-header-cell *matHeaderCellDef>Dial</mat-header-cell>
+   <mat-cell *matCellDef="let user">{{user.dial}}</mat-cell>
+   </ng-container>  
+   <ng-container matColumnDef="dialpattern">
+   <mat-header-cell *matHeaderCellDef>Pattern</mat-header-cell>
+   <mat-cell *matCellDef="let user">{{user.dialpattern}}</mat-cell>
+   </ng-container>
+   <ng-container matColumnDef="callerid">
+       <mat-header-cell *matHeaderCellDef>Caller Id</mat-header-cell>
+       <mat-cell *matCellDef="let user">{{user.callerid}}</mat-cell>k
+       </ng-container>  
+       <ng-container matColumnDef="trunk">
+           <mat-header-cell *matHeaderCellDef>Trunk</mat-header-cell>
+           <mat-cell *matCellDef="let user">{{user.trunk}}</mat-cell>
+           </ng-container>   
+   <ng-container matColumnDef="action">
+     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+     <mat-cell *matCellDef="let user"><input type="submit" value="Delete"  (click)="deleteExtension(user._id,user.extensionno)"></mat-cell>
+     </ng-container>    
+   <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+   <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+   </mat-table>
+  </mat-card>
+  </div>
         </div>
