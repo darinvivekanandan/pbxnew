@@ -1,0 +1,74 @@
+
+<div class="class">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-edit"></i>Register
+        <div class="card-header-actions">
+          <button type="button" class="card-header-action btn btn-link btn-setting"><i class="icon-settings"></i></button>
+          <button type="button" class="card-header-action btn btn-link btn-minimize"(click)="toggleCollapse()"></button>
+          <button type="button" class="card-header-action btn btn-link btn-close"><i class="icon-close"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+          <form>
+              <h5 class="text-muted">Add Restaurant</h5>
+              <div class="input-group mb-3">
+            
+              <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Restaurant Name" autocomplete="name" required>
+              </div>
+          
+              <div class="input-group mb-3">
+          
+              <input type="text" class="form-control" [(ngModel)]="cname" name="cname" placeholder="Company Name" autocomplete="cname" required>
+              </div>
+              <div class="input-group mb-3">
+              <select class="form-control" [(ngModel)]="style" name="style">
+                <option value="Italian" selected>Italian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Asian">Asian</option>
+                <option value="European">European</option>
+          
+              </select>
+              
+                  </div>
+              <div class="input-group mb-3">
+              
+              <input type="text" class="form-control" [(ngModel)]="sname" name="sname" placeholder="Street Name" autocomplete="sname" required>
+            </div>
+                <div class="input-group mb-3">
+                
+                    <input type="text" class="form-control" [(ngModel)]="pnumber" name="pnumber" placeholder="Phone Number" autocomplete="pnumber" required>
+                  </div>
+                  <div class="input-group mb-3">
+                    
+                      <input type="text" class="form-control" [(ngModel)]="zip" name="zip"  placeholder="Zipcode" autocomplete="zip" required>
+                    </div>
+                    <div class="input-group mb-3">
+                      
+                        <input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="City" autocomplete="city" required>
+                      </div>
+                      <div class="input-group mb-3">
+                        
+                          <input type="text" class="form-control" [(ngModel)]="country" name="country" placeholder="Country" autocomplete="country" required>
+                        </div>
+                          <div class="input-group mb-3">
+                            
+                              <input type="text" class="form-control" [(ngModel)]="cperson" name="cperson"  placeholder="Contact Person" autocomplete="cperson" required>
+                            </div>
+              <div class="input-group mb-3">
+              
+                <input type="text" class="form-control" [(ngModel)]="cnumber" name="cnumber" placeholder="Contact Person Number" autocomplete="cnumber" required>
+              </div>
+              <div class="input-group mb-4">
+              
+                <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Mail Address" autocomplete="email" required>
+              </div>
+              <button type="button" class="btn btn-block btn-success"(click)="save()"> Create Account</button>
+            </form>
+      </div>
+    </div>
+  </div> <!--/.col-->
+</div><!--/.row-->
+</div>

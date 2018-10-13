@@ -1,0 +1,41 @@
+<div class="class1">
+  <div class="class2">
+  <mat-card>
+    <mat-card-title><button mat-raised-button color="primary" (click)="openDialog()">Add Extension</button> </mat-card-title>
+      <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Extensions">
+
+        </mat-form-field>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="extensionno">
+<mat-header-cell  *matHeaderCellDef>Extension No</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.extensionno}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="displayname">
+<mat-header-cell *matHeaderCellDef>Display Name</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.displayname}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="outboundcid">
+<mat-header-cell *matHeaderCellDef>Outbound CID</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.outboundcid}}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="password">
+    <mat-header-cell *matHeaderCellDef>Password</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.password}}</mat-cell>
+    </ng-container>  
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+        </ng-container>   
+<ng-container matColumnDef="action">
+  <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+  <mat-cell *matCellDef="let user"><input type="submit" value="Delete"  (click)="deleteExtension(user._id,user.extensionno)"></mat-cell>
+  </ng-container>    
+<mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+<mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+</mat-table>
+</mat-card> 
+</div>
+</div>
+
+  

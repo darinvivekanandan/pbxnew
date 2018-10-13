@@ -1,0 +1,43 @@
+<div class="class1">
+  <div class="class2">
+    <mat-card>
+      <mat-card-title> <button mat-raised-button (click)="openDialog()">Add</button>
+      </mat-card-title>
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Contacts">
+          </mat-form-field>
+ <mat-table class="class2" [dataSource]="inbounds" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+<mat-header-cell  *matHeaderCellDef>Name</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.name}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="didnumber">
+<mat-header-cell *matHeaderCellDef>Did Number</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.didnumber}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="playback">
+<mat-header-cell *matHeaderCellDef>Playback</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.playback}}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="ringgroup">
+<mat-header-cell *matHeaderCellDef>Ring Group</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.ringgroup}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="forext">
+<mat-header-cell *matHeaderCellDef>Forext</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.forext}}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="formob">
+<mat-header-cell *matHeaderCellDef>Formob</mat-header-cell>
+<mat-cell *matCellDef="let user">{{user.formob}}</mat-cell>
+</ng-container>  
+<ng-container matColumnDef="action">
+  <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+  <mat-cell *matCellDef="let user"><input type="submit" value="Delete"  (click)="deleteExtension(user._id,user.extensionno)"></mat-cell>
+  </ng-container>    
+<mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+<mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+</mat-table>
+</mat-card>
+</div>
+</div>

@@ -1,0 +1,61 @@
+<div class="class">
+    <mat-card>
+        <form>
+            <h1>Register</h1>
+            <h5 class="text-muted">Add Restaurants</h5>
+            <div class="input-group mb-3">
+           
+            <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Restaurant Name" autocomplete="name" required>
+            </div>
+        
+            <div class="input-group mb-3">
+        
+            <input type="text" class="form-control" [(ngModel)]="cname" name="cname" placeholder="Company Name" autocomplete="cname" required>
+            </div>
+            <div class="input-group mb-3">
+            <select class="form-control" [(ngModel)]="style" name="style">
+               <option value="italian" selected>Italian</option>
+              <option value="mexican">Mexican</option>
+              <option value="asian">Asian</option>
+              <option value="european">European</option>
+        
+            </select>
+             
+                </div>
+            <div class="input-group mb-3">
+             
+            <input type="text" class="form-control" [(ngModel)]="sname" name="sname" placeholder="Street Name" autocomplete="sname" required>
+           </div>
+              <div class="input-group mb-3">
+              
+                  <input type="text" class="form-control" [(ngModel)]="pnumber" name="pnumber" placeholder="Phone Number" autocomplete="pnumber" required>
+                </div>
+                <div class="input-group mb-3">
+                  
+                    <input type="text" class="form-control" [(ngModel)]="zip" name="zip"  placeholder="Zipcode" autocomplete="zip" required>
+                  </div>
+                  <div class="input-group mb-3">
+                    
+                      <input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="City" autocomplete="city" required>
+                    </div>
+                    <div class="input-group mb-3">
+                      
+                        <input type="text" class="form-control" [(ngModel)]="country" name="country" placeholder="Country" autocomplete="country" required>
+                      </div>
+                        <div class="input-group mb-3">
+                           
+                            <input type="text" class="form-control" [(ngModel)]="cperson" name="cperson"  placeholder="Contact Person" autocomplete="cperson" required>
+                          </div>
+            <div class="input-group mb-3">
+             
+              <input type="text" class="form-control" [(ngModel)]="cnumber" name="cnumber" placeholder="Contact Person Number" autocomplete="cnumber" required>
+            </div>
+            <div class="input-group mb-4">
+             
+              <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Mail Address" autocomplete="email" required>
+            </div>
+            <button type="button" class="btn btn-block btn-success"(click)="save()"> Create Account</button>
+            <button type="button" class="btn btn-block btn-success"(click)="close()"> Exit</button>
+          </form>
+        </mat-card>
+        </div>

@@ -1,0 +1,63 @@
+
+<div class="class">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> View Restaurants
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Cname</th>
+              <th>sname</th>
+              <th>Pnumber</th>
+              <th>Zip</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Cperson</th>
+              <th>Cnumber</th>
+              <th>Email</th>
+              <th>Style</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let rest of rest2 ">
+              <td>{{rest.name}}</td>
+              <td>{{rest.cname}}</td>
+              <td>{{rest.sname}}</td>
+              <td>{{rest.pnumber}}</td>
+              <td>{{rest.zip}}</td>
+              <td>{{rest.city}}</td>
+              <td>{{rest.country}}</td>
+              <td>{{rest.cperson}}</td>
+              <td>{{rest.cnumber}}</td>
+              <td>{{rest.email}}</td>
+              <td>{{rest.style}}</td>
+
+
+
+
+
+              <td>
+                <button class="badge badge-success" (click)="deleterestaurant(rest._id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+        -->
+      </div>
+    </div>
+  </div>
