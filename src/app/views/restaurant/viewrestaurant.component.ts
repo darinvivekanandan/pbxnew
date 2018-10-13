@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import{Restaurant} from './restaurant';
 import { RestaurantService } from './restaurant.service';
 import {MatSort,MatTableDataSource} from '@angular/material';
-import { Alert } from 'selenium-webdriver';
 import {Event} from './event';
 import {WebsocketService} from '../websocket.service';
 
